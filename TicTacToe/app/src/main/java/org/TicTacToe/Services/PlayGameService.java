@@ -44,8 +44,7 @@ public class PlayGameService {
                         Move positionData = new Move(selectedBlockRow, selectedBlockCol);
 
                         tempPlayer.getPositionsVisited().add(positionData);
-                        cells.get(selectedBlockRow).get(selectedBlockCol).setVisited(true);
-                        cells.get(selectedBlockRow).get(selectedBlockCol).setPlayer(tempPlayer);
+                        board.makeMove(tempPlayer, selectedBlockRow, selectedBlockCol);
                     }
                 }
                 if (board.checkGameDraw()) {

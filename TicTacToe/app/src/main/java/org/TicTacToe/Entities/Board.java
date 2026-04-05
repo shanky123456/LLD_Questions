@@ -107,4 +107,9 @@ public class Board {
         }
         return true;
     }
+
+    public void makeMove(Player player, int row, int col) {
+        cells.get(row).get(col).setVisited(true);
+        cells.get(row).get(col).setPlayer(player);
+    }
 }
