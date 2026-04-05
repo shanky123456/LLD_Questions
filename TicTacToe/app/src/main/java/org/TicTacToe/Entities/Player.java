@@ -1,11 +1,12 @@
 package org.TicTacToe.Entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
 
     private String playerName;
-    private List<Integer> positionsVisited;
+    private ArrayList<Move> positionsVisited;
 
     public void setPlayerName(String playerName) {
         this.playerName = playerName;
@@ -15,11 +16,12 @@ public class Player {
         return playerName;
     }
 
-    public List<Integer> getPositionsVisited() {
+    public ArrayList<Move> getPositionsVisited() {
         return positionsVisited;
     }
 
-    public void setPositionsVisited(List<Integer> positionsVisited) {
+    public void setPositionsVisited(ArrayList<Move> positionsVisited) {
         this.positionsVisited = positionsVisited;
     }
 }
+

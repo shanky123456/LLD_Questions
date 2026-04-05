@@ -1,7 +1,7 @@
 package org.TicTacToe.Entities;
 
 public class Cell {
-    private boolean isVisited;
+    private Boolean isVisited;
     private Player player;
 
     public void setPlayer(Player player) {

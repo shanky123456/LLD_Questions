@@ -28,12 +28,18 @@ public class InitializeGameService {
         initializedGame.setStatus(status);  // Initializing Status of Game
 
 
-        List<Cell> cells = new ArrayList<Cell>();
-        for (int i = 0; i < sizeOfBoard * sizeOfBoard; i++) {
-            Cell tempCell = new Cell();
-            tempCell.setVisited(Boolean.FALSE);
-            cells.add(tempCell);
+        List<List<Cell>> cells = new ArrayList<List<Cell>>();
+
+        for (int i = 0; i < sizeOfBoard; i++) {
+            List <Cell> tempCells = new ArrayList<Cell>();
+            for (int j = 0; j < sizeOfBoard; j++) {
+                Cell tempCell = new Cell();
+                tempCell.setVisited(Boolean.FALSE);
+                tempCells.add(tempCell);
+            }
+            cells.add(tempCells);
         }
+
 
         Board board = new Board();
         board.setBoardSize(sizeOfBoard);
@@ -45,11 +51,11 @@ public class InitializeGameService {
 
         Player playerOneObj = new Player();
         playerOneObj.setPlayerName(player1Name);
-        playerOneObj.setPositionsVisited(new ArrayList<Integer>());
+        playerOneObj.setPositionsVisited(new ArrayList<Move>());
 
         Player playerTwoObj = new Player();
         playerTwoObj.setPlayerName(player2Name);
-        playerTwoObj.setPositionsVisited(new ArrayList<Integer>());
+        playerTwoObj.setPositionsVisited(new ArrayList<Move>());
 
         players.add(playerOneObj);
         players.add(playerTwoObj);

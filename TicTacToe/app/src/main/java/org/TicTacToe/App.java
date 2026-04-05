@@ -6,10 +6,12 @@ package org.TicTacToe;
 import org.TicTacToe.Entities.Game;
 import org.TicTacToe.Entities.ScoreBoard;
 import org.TicTacToe.Services.InitializeGameService;
+import org.TicTacToe.Services.PlayGameService;
+import org.TicTacToe.Services.PrintScoreBoardService;
 import org.TicTacToe.Services.UpdateScoreBoardService;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Scanner;
 
 public class App {
 
@@ -19,11 +21,11 @@ public class App {
         scoreBoard.setGames(new ArrayList<Game>());
         Game game1 = new InitializeGameService("Shanky", "Nigga", 3, 1).initializeGame();
         scoreBoard = new UpdateScoreBoardService().updateScoreBoard(scoreBoard, game1);
-
-        
-
-
-
+        Scanner sc = new Scanner(System.in);
+        game1 = new PlayGameService(game1, sc).playGame();
+        scoreBoard = new UpdateScoreBoardService().updateScoreBoard(scoreBoard, game1);
+        new PrintScoreBoardService().printScoreBoard(scoreBoard);
         System.out.println("\n");
     }
+
 }
